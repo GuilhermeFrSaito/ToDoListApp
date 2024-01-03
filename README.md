@@ -1,6 +1,7 @@
 # ToDoList App
 
-This is a simple ToDo List App. This will be part of a series of apps made with the intent of learning some programming skills. The application presents menus for creating and manipulating Lists of ToDo Tasks, with Task Name, Due Date and Status of Task.
+This is a simple ToDo List App.
+This will be part of a series of apps made with the intent of learning some programming skills. The application presents menus for creating and manipulating Lists of ToDo Tasks, with Task Name, Due Date and Status of Task.
 Implements a FileHandler class to store and persist data contained in lists inside text files.
 
 ## Details
