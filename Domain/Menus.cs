@@ -8,11 +8,12 @@
             Console.WriteLine("-------------------------------------------\n");
             Console.WriteLine("Welcome to ToDo List! \n");
             Console.WriteLine("Today is " + DateTime.Today.ToShortDateString() + "\n");
+            Console.WriteLine("WARNING: The above date format will be used throughout the application!\n");
             Console.WriteLine("Please select your desired action:\n");
             Console.WriteLine("1 - Create A List For Today");
             Console.WriteLine("2 - Load All Lists From File");
-            Console.WriteLine("3 - View List From Date");
-            Console.WriteLine("4 - Delete List From Date");
+            Console.WriteLine("3 - View List By Date");
+            Console.WriteLine("4 - Delete List By Date");
             Console.WriteLine("5 - Select List To Work");
             Console.WriteLine("6 - Save Changes");
             Console.WriteLine("7 - Save And Exit");
