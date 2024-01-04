@@ -113,10 +113,10 @@ namespace ToDoListApp.Domain
 
         public void LoadToDoLists()
         {
-            List<ToDoList> loadedLists = _fileHandler.LoadToDoLists();
-            _toDoLists = loadedLists.ToDictionary(todoList => todoList.Date, todoList => todoList);
+            List<ToDoList>? loadedLists = _fileHandler.LoadToDoLists();
+            if (loadedLists != null)
+                _toDoLists = loadedLists.ToDictionary(todoList => todoList.Date, todoList => todoList);
 
-            Console.WriteLine("\nLists successfully loaded!");
             PressToContinue();
         }
 
@@ -200,7 +200,7 @@ namespace ToDoListApp.Domain
                     }
 
                     Console.WriteLine($"\nCurrent Task Due Date: {item.DueDate}");
-                    Console.Write("Enter new due date (MM/DD/YYYY HH:MM:SS)");
+                    Console.Write("Enter new due date: ");
                     var newReadDueDate = Console.ReadLine();
                     if (DateTime.TryParse(newReadDueDate, out DateTime newDueDate))
                     {

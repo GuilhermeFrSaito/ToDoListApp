@@ -15,14 +15,14 @@
             switch (choice)
             {
                 case '1':
-                    _manager.CreateToDoList(DateOnly.Parse(DateTime.Today.ToShortDateString()));
+                    _manager.CreateToDoList(DateProcessor.GetSystemDate());
                     break;
                 case '2':
                     _manager.LoadToDoLists();
                     break;
                 case '3':
                     Console.Clear();
-                    Console.Write("Type desired date to view list (MM/DD/YYYY): ");
+                    Console.Write($"Type desired date to view list: ");
                     DateOnly dateView;
                     if (DateOnly.TryParse(Console.ReadLine(), out dateView))
                         _manager.PrintList(dateView);
@@ -31,7 +31,7 @@
                     break;
                 case '4':
                     Console.Clear();
-                    Console.Write("Please enter Date to delete List (MM/DD/YYYY): ");
+                    Console.Write("Please enter Date to delete List: ");
                     DateOnly dateDelete;
                     if (DateOnly.TryParse(Console.ReadLine(), out dateDelete))
                         _manager.DeleteList(dateDelete);
@@ -40,7 +40,7 @@
                     break;
                 case '5':
                     Console.Clear();
-                    Console.Write("Please enter date do select list (MM/DD/YYYY): ");
+                    Console.Write("Please enter date do select list: ");
                     DateOnly dateSelect;
                     if (DateOnly.TryParse(Console.ReadLine(), out dateSelect))
                     {
@@ -94,7 +94,7 @@
                         PressToContinue();
                         break;
                     }
-                    Console.Write("Enter Due Date for Task (MM/DD/YYYY HH:MM:SS): ");
+                    Console.Write("Enter Due Date for Task (date time): ");
                     DateTime taskDueDate;
                     if (!DateTime.TryParse(Console.ReadLine(), out taskDueDate))
                     {
@@ -179,14 +179,14 @@
         private static void InvalidDate()
         {
             Console.WriteLine();
-            Console.WriteLine("Invalid date. Date must be in MM/DD/YYYY format.");
+            Console.WriteLine("Invalid date. Please type correct date format.");
             PressToContinue();
         }
 
         private static void InvalidDateTime()
         {
             Console.WriteLine();
-            Console.WriteLine("Invalid date or time. Must be in MM/DD/YYYY HH:MM:SS format.");
+            Console.WriteLine("Invalid date or time.");
             PressToContinue();
         }
 

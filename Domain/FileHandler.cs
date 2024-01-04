@@ -25,7 +25,7 @@ namespace ToDoListApp.Domain
             File.WriteAllText(_filePath, jsonString);
         }
 
-        public List<ToDoList> LoadToDoLists()
+        public List<ToDoList>? LoadToDoLists()
         {
             if (File.Exists(_filePath))
             {
@@ -41,9 +41,8 @@ namespace ToDoListApp.Domain
             else
             {
                 Console.WriteLine("\nFile not found!");
-                Console.Write("Press any key to continue");
-                Console.ReadKey();
-                return new List<ToDoList>();
+
+                return null;
             }
         }
     }
